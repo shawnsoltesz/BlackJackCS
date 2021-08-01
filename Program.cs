@@ -13,7 +13,7 @@ namespace BlackJackCS
       Console.WriteLine($"It is a pleasure to meet you {name}! Press any key to begin.");
       Console.ReadLine();
     }
-    public static void DeckCreationAndShuffle()
+    public static List<string> DeckCreationAndShuffle()
     {
       var suits = new List<string>() { "Hearts", "Spades", "Clubs", "Diamonds", };
       var ranks = new List<string>() { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", };
@@ -24,7 +24,11 @@ namespace BlackJackCS
         {
             var card = $"{rank} of {suit}";
             deckOfCards.Add(card);
+ 
         }
+      
+        return deckOfCards; 
+
       }
     
       var numberOfCards = deckOfCards.Count;
@@ -35,15 +39,11 @@ namespace BlackJackCS
           var leftIndex = randomNumberGenerator.Next(rightIndex);
             
           var leftCard = deckOfCards[leftIndex];
- 
           var rightCard = deckOfCards[rightIndex];
             
-          deckOfCards[rightIndex] = leftCard;
-            
- 
+          deckOfCards[rightIndex] = leftCard;            
           deckOfCards[leftIndex] = rightCard;
         }
-        
         
       } 
     
@@ -53,20 +53,19 @@ namespace BlackJackCS
 
         Console.WriteLine("Let's begin!\n");
 
-        DeckCreationAndShuffle();
+        string myDeckOfCards = DeckCreationAndShuffle();
 
-        int firstCard = DeckCreationAndShuffle (deckOfCards[0]);
+        string firstCard = myDeckOfCards[0];
         Console.WriteLine($"Player's first card is: {firstCard}");
  
-        int thirdCard = DeckCreationAndShuffle (deckOfCards[2]);
+        string thirdCard = myDeckOfCards[2];
         Console.WriteLine($"Player's second card is: {thirdCard}");
 
-        int secondCard = DeckCreationAndShuffle (deckOfCards[1]);
+        string secondCard = myDeckOfCards[1];
         Console.WriteLine($"Dealer's second card is: {secondCard}");
  
-        int fourthCard = DeckCreationAndShuffle (deckOfCards[3]);
+        string fourthCard = myDeckOfCards[3];
         Console.WriteLine($"Dealer's second card is: (Face Down)");
-        
 
     }
   }
