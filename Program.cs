@@ -5,17 +5,15 @@ namespace BlackJackCS
 {
   class Program
   {
-    static void OpeningGreeting()
+    public static void OpeningGreeting()
     {   
       Console.WriteLine("Welcome to Black Jack\n");
-      Console.WriteLine("Rules of the Game");
-      Console.WriteLine("1. ");
-      Console.WriteLine("2. ");
-      Console.WriteLine("3. ");
-      Console.WriteLine("Text\n");
-      Console.WriteLine("Text\n");
+      Console.Write("What is your name? ");
+      var name = Console.ReadLine();
+      Console.WriteLine($"It is a pleasure to meet you {name}! Press any key to begin.");
+      Console.ReadLine();
     }
-    static void DeckCreationAndShuffle()
+    public static void DeckCreationAndShuffle()
     {
       var suits = new List<string>() { "Hearts", "Spades", "Clubs", "Diamonds", };
       var ranks = new List<string>() { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", };
@@ -45,22 +43,8 @@ namespace BlackJackCS
  
           deckOfCards[leftIndex] = rightCard;
         }
- 
-        {
-          var firstCard = deckOfCards[0];
-           //Console.WriteLine(firstCard);
-           Console.WriteLine($"The Player's first card is: {firstCard}");
- 
-          var secondCard = deckOfCards[1];
-          Console.WriteLine($"The Dealer's first card is: {secondCard}");
-
-          var thirdCard = deckOfCards[2];
-           //Console.WriteLine(firstCard);
-           Console.WriteLine($"The Player's second card is: {thirdCard}");
- 
-          var fourthCard = deckOfCards[3];
-          Console.WriteLine($"The Dealer's second card is: (Face Down)");
-        }
+        Console.WriteLine("Let's begin!\n");
+        
       } 
     
     static void Main(string[] args)
@@ -68,6 +52,21 @@ namespace BlackJackCS
         OpeningGreeting();
 
         DeckCreationAndShuffle();
+
+          var firstCard = deckOfCards[0];
+           //Console.WriteLine(firstCard);
+           Console.WriteLine($"{name}'s first card is: {firstCard}");
+ 
+          var thirdCard = deckOfCards[2];
+          Console.WriteLine($"{name}'s second card is: {thirdCard}");
+
+          var secondCard = deckOfCards[1];
+           //Console.WriteLine(firstCard);
+           Console.WriteLine($"Dealer's second card is: {secondCard}");
+ 
+          var fourthCard = deckOfCards[3];
+          Console.WriteLine($"Dealer's second card is: (Face Down)");
+        
 
     }
   }
