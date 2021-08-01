@@ -43,7 +43,7 @@ namespace BlackJackCS
  
           deckOfCards[leftIndex] = rightCard;
         }
-        Console.WriteLine("Let's begin!\n");
+        
         
       } 
     
@@ -51,21 +51,21 @@ namespace BlackJackCS
     {
         OpeningGreeting();
 
+        Console.WriteLine("Let's begin!\n");
+
         DeckCreationAndShuffle();
 
-          var firstCard = deckOfCards[0];
-           //Console.WriteLine(firstCard);
-           Console.WriteLine($"{name}'s first card is: {firstCard}");
+        int firstCard = DeckCreationAndShuffle (deckOfCards[0]);
+        Console.WriteLine($"Player's first card is: {firstCard}");
  
-          var thirdCard = deckOfCards[2];
-          Console.WriteLine($"{name}'s second card is: {thirdCard}");
+        int thirdCard = DeckCreationAndShuffle (deckOfCards[2]);
+        Console.WriteLine($"Player's second card is: {thirdCard}");
 
-          var secondCard = deckOfCards[1];
-           //Console.WriteLine(firstCard);
-           Console.WriteLine($"Dealer's second card is: {secondCard}");
+        int secondCard = DeckCreationAndShuffle (deckOfCards[1]);
+        Console.WriteLine($"Dealer's second card is: {secondCard}");
  
-          var fourthCard = deckOfCards[3];
-          Console.WriteLine($"Dealer's second card is: (Face Down)");
+        int fourthCard = DeckCreationAndShuffle (deckOfCards[3]);
+        Console.WriteLine($"Dealer's second card is: (Face Down)");
         
 
     }
