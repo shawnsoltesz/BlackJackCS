@@ -55,16 +55,16 @@ namespace BlackJackCS
 
         string myDeckOfCards = DeckCreationAndShuffle();
 
-        string firstCard = myDeckOfCards[0];
-        Console.WriteLine($"Player's first card is: {firstCard}");
+        string playerFirstCard = myDeckOfCards[0];
+        Console.WriteLine($"Player's first card is: {playerFirstCard}");
  
-        string thirdCard = myDeckOfCards[2];
-        Console.WriteLine($"Player's second card is: {thirdCard}");
+        string playersecondCard = myDeckOfCards[2];
+        Console.WriteLine($"Player's second card is: {playersecondCard}");
 
-        string secondCard = myDeckOfCards[1];
-        Console.WriteLine($"Dealer's second card is: {secondCard}");
+        string dealerFirstCard = myDeckOfCards[1];
+        Console.WriteLine($"Dealer's first card is: {dealerFirstCard}");
  
-        string fourthCard = myDeckOfCards[3];
+        string dealerSecondCard = myDeckOfCards[3];
         Console.WriteLine($"Dealer's second card is: (Face Down)");
 
     }
